@@ -1,0 +1,13 @@
+.product-image img{
+
+    width:100px;
+}
+.cart-item{
+
+    border-radius:10px;
+}
+.product-purchase input{
+
+    width:40px;
+    margin: 0 10px;
+}
