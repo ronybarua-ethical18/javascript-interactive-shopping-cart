@@ -15,7 +15,7 @@
 
 <body class="container">
     <section class="shopping-cart bg-light p-5">
-        <div class="cart-item bg-white p-4 mb-4">
+        <div class="cart-item bg-white p-4 mb-4" id= "phone-item">
             <div class="row">
                 <div class="col-md-7 product-image d-flex align-items-center">
                     <img src="assets/images/product-1.png" class="img-fluid me-5" alt="">
@@ -28,11 +28,12 @@
                     <button class="btn" onclick="handleProductChange('phone', true)" id="phone-increase"><i
                             class="fas fa-plus"></i></button>
                     <h4 class="ms-5">$<span id="phone-total">1219</span></h4>
-                    <img src="assets/images/remove.png" class="img-fluid ms-5" alt="">
+                    <img src="assets/images/remove.png" onclick="productRemove('phone')" class="img-fluid ms-5"
+                        id="phone-remove" alt="">
                 </div>
             </div>
         </div>
-        <div class="cart-item bg-white p-4 mb-4">
+        <div class="cart-item bg-white p-4 mb-4" id= "case-item">
             <div class="row">
                 <div class="col-md-7 product-image d-flex align-items-center">
                     <img src="assets/images/product-2.png" class="img-fluid me-5" alt="">
@@ -45,7 +46,8 @@
                     <button class="btn" onclick="handleProductChange('case', true)" id="case-increase"><i
                             class="fas fa-plus"></i></button>
                     <h4 class="ms-5">$<span id="case-total">59</span></h4>
-                    <img src="assets/images/remove.png" class="img-fluid ms-5" alt="">
+                    <img src="assets/images/remove.png" onclick="productRemove('case')" class="img-fluid ms-5"
+                        id="case-remove" alt="">
                 </div>
             </div>
         </div>
@@ -120,6 +122,16 @@
             const productCount = parseInt(productInput.value);
             return productCount;
 
+        }
+
+        // remove items 
+        function productRemove(product) {
+            if (product == 'phone' || product == 'case') {
+                const productDelete = document.getElementById(product + '-remove');
+                const phoneItem = document.getElementById(product + '-item');
+                phoneItem.style.display = "none";
+            }
+            return product;
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
